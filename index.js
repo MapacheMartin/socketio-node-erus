@@ -4,11 +4,7 @@ var https = require('https');
 const fs = require("fs");
 const cors = require('cors');
 const path = require('path');
-const io = require("socket.io")(https, {
-  cors: {
-    origin: '*',
-  }
-});
+const io = require("socket.io")(https, { transports : ['websocket'] });
 var port = process.env.PORT || 8005;
 
  
