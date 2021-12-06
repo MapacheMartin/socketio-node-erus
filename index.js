@@ -2,17 +2,12 @@ const app = require("express")();
 const http = require("http").createServer(app);
 var https = require('https');
 const fs = require("fs");
+const cors = require('cors');
 const path = require('path');
 const io = require("socket.io")(https, {
   cors: {
-    origins: [
-      "https://canjeatesting.erus.mx",
-      "http://localhost:4200",
-      "http://localhost:8080",
-      "https://erp.erus.mx",
-      "https://erpupdate.erus.mx",
-    ],
-  },
+    origin: '*',
+  }
 });
 var port = process.env.PORT || 8005;
 
