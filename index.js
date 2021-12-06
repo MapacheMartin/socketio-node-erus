@@ -1,8 +1,5 @@
 const app = require("express")();
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*"); 
-  next();
-});
+ 
 const http = require("http").createServer(app);
 var https = require('https');
 const fs = require("fs");
@@ -10,8 +7,14 @@ const cors = require('cors');
 const path = require('path');
 const io = require("socket.io")(https, {
   cors: {
-    origin: "*",  
-    methods: ["GET", "POST"]
+    origins: [
+      "https://canjeatesting.erus.mx",
+      "http://localhost:4200",
+      "http://localhost:8080",
+      "https://erp.erus.mx",
+      "https://erpupdate.erus.mx",
+      "https://localhost:4200",
+    ]
   },
 });
 var port = process.env.PORT || 8005;
