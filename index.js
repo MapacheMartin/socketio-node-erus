@@ -11,7 +11,7 @@ const io = require("socket.io")(http, {
     ],
   },
 });
-
+var port = process.env.PORT || 8080;
 io.use((socket, next) => {
   const token = socket.handshake.auth.token;
   if (token === "dedb2b7e-c7c0-4ed9-b7dd-197908574aae") next();
@@ -21,9 +21,9 @@ io.use((socket, next) => {
   }
 });
 
-// app.get("/", (req, res) => {
-//   res.send("<h1>Hey Socket.io</h1>");
-// });
+app.get("/", (req, res) => {
+  res.send("<h1>ERUS</h1>");
+});
 
 io.on("connection", (socket) => {
   // console.log("a user connected");
@@ -40,6 +40,6 @@ io.on("connection", (socket) => {
   });
 });
 
-http.listen(3000, () => {
+http.listen(port, () => {
   console.log("listening on *:3000");
 });
