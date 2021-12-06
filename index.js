@@ -13,7 +13,7 @@ const io = require("socket.io")(http, {
     ],
   },
 });
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 8005;
 
  
 const getMostRecentFile = (dir) => {
@@ -63,12 +63,12 @@ if(Boolean(process.env.PROD)===true){
   return https.createServer({
     key: fs.readFileSync(`/home/erusboxadmin/ssl/keys/${key.file}`),
     cert: fs.readFileSync(`/home/erusboxadmin/ssl/certs/${cert.file}`)
-  },app).listen(process.env.PORT||3000, () => {
-    console.log(`Servicio de créditos corriendo en el puerto ${process.env.PORT||3000}!`)
+  },app).listen(process.env.PORT||8005, () => {
+    console.log(`Servicio de créditos corriendo en el puerto ${process.env.PORT||8005}!`)
   });
 }else{
-  return app.listen(process.env.PORT||3000, () => {
-    console.log(`Servicio de créditos corriendo en el puerto ${process.env.PORT||3000}!`)
+  return app.listen(process.env.PORT||8005, () => {
+    console.log(`Servicio de créditos corriendo en el puerto ${process.env.PORT||8005}!`)
   });
 }
  
