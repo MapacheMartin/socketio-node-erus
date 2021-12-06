@@ -2,6 +2,7 @@ const app = require("express")();
 const http = require("http").createServer(app);
 var https = require('https');
 const fs = require("fs");
+const path = require('path');
 const io = require("socket.io")(http, {
   cors: {
     origins: [
