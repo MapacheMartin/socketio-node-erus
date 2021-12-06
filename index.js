@@ -4,16 +4,9 @@ var https = require('https');
 const fs = require("fs");
 const cors = require('cors');
 const path = require('path');
-const io = require("socket.io")(http, {
+const io = require("socket.io")(https, {
   cors: {
-    origins: [
-      "https://canjeatesting.erus.mx",
-      "http://localhost:4200",
-      "http://localhost:8080",
-      "https://erp.erus.mx",
-      "https://erpupdate.erus.mx",
-      "https://localhost:4200",
-    ],
+    origin: "*",  
     methods: ["GET", "POST"]
   },
 });
