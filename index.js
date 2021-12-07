@@ -5,7 +5,7 @@ var https = require('https');
 const fs = require("fs");
 const cors = require('cors');
 const path = require('path');
-const io = require("socket.io")(https, {
+const io = require("socket.io")(http, {
   path: "/socket.io",
   cors: {
     origin: "*",
