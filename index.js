@@ -7,7 +7,9 @@ const cors = require('cors');
 const path = require('path');
 const io = require("socket.io")(https, {
   cors: {
-    origin: '*',
+    origin: "*",
+    methods: ["GET", "POST"], 
+    credentials: true
   }
 });
 var port = process.env.PORT || 8005;
