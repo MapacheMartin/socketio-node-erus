@@ -9,8 +9,7 @@ const io = require("socket.io")(https, {
   transports:  ['websocket','polling'],
     cors: {
       origin: "*", //http://localhost:4200
-      methods: ["GET", "POST"],
-      allowedHeaders: ["my-custom-header"],
+      methods: ["GET", "POST"], 
       credentials: true
     }
    
