@@ -28,7 +28,7 @@ const orderReccentFiles = (dir) => {
     .map((file) => ({ file, mtime: fs.lstatSync(path.join(dir, file)).mtime }))
     .sort((a, b) => b.mtime.getTime() - a.mtime.getTime());
 };
- 
+app.use(cors());
 io.use((socket, next) => {
   const token = socket.handshake.auth.token;
   if (token === "dedb2b7e-c7c0-4ed9-b7dd-197908574aae") next();
