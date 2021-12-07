@@ -6,13 +6,9 @@ const fs = require("fs");
 const cors = require('cors');
 const path = require('path');
 const io = require("socket.io")(https, {
-  transports:  ['websocket','polling'],
-    cors: {
-      origin: "*", //http://localhost:4200
-      methods: ["GET", "POST"], 
-      credentials: true
-    }
-   
+  cors: {
+    origin: '*',
+  }
 });
 var port = process.env.PORT || 8005;
 
