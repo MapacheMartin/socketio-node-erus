@@ -6,16 +6,14 @@ const fs = require("fs");
 const cors = require('cors');
 const path = require('path');
 const io = require("socket.io")(https, {
-  cors: {
-    origins: [
-      "https://canjeatesting.erus.mx",
-      "http://localhost:4200",
-      "http://localhost:8080",
-      "https://erp.erus.mx",
-      "https://erpupdate.erus.mx",
-      "https://localhost:4200",
-    ]
-  },
+  transports:  ['websocket','polling'],
+    cors: {
+      origin: "*", //http://localhost:4200
+      methods: ["GET", "POST"],
+      allowedHeaders: ["my-custom-header"],
+      credentials: true
+    }
+   
 });
 var port = process.env.PORT || 8005;
 
