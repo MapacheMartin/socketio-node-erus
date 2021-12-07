@@ -1,11 +1,11 @@
 const app = require("express")();
  
-const http = require("http").createServer(app);
-var https = require('https');
+const http = require("http");
+var https = require('https').createServer(app);
 const fs = require("fs");
 const cors = require('cors');
 const path = require('path');
-const io = require("socket.io")(http, {
+const io = require("socket.io")(https, {
   path: "/socket.io",
   cors: {
     origin: "*",
