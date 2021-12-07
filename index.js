@@ -1,6 +1,6 @@
 const app = require("express")();
  
-const http = require("http").createServer(app);
+const http = require("http");
 var https = require('https');
 const fs = require("fs");
 const cors = require('cors');
