@@ -3,8 +3,10 @@ var https = require('https');
 const http = require("http");
 var express = require('express'); 
 const path = require('path');
+const cors = require('cors');
 var app = express();
 
+app.use(cors());
 const getMostRecentFile = (dir) => {
     const files = orderReccentFiles(dir);
     return files.length ? files[0] : undefined;
