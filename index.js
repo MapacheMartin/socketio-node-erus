@@ -35,7 +35,14 @@ if(Boolean(process.env.PROD)===true){
   server = http.createServer(options, app);
 }
 serverPort = 8005;
-var io = require('socket.io')(server);
+var io = require('socket.io')(server, {
+  path: "/socket.io",
+  cors: {
+    origin: "*",
+    methods: ["GET", "POST"], 
+    credentials: true
+  }
+});
 
 app.get("/", (req, res) => {
     res.send("<h1>ERUS</h1>");
